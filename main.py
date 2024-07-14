@@ -33,8 +33,9 @@ quote_texts = [quote.text for quote in quotes]
 author_names = [author.text for author in authors]
 
 data = {
-    "Quote": quote_texts,
-    "Author": author_names
+    "Author": author_names,
+    "Quote": quote_texts
+    
 }
 df = pd.DataFrame(data)
 
