@@ -38,8 +38,8 @@ data = {
 }
 df = pd.DataFrame(data)
 
-# Save the DataFrame to a CSV file
-df.to_csv("quotes.csv", index=False, encoding='utf-8')
+excel_filename = "quotes.xlsx"
+df.to_excel(excel_filename, index=False)
 
 # Sleep for a random interval between 1 and 3 seconds
 s = random.uniform(1, 3)
