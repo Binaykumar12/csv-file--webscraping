@@ -1,1 +1,1 @@
-# tutirial_freak--webscraping
+# tutorial_freak--webscraping
