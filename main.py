@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import random
+import pandas as pd
 
 # URL of the page to scrape
 url = "https://quotes.toscrape.com/"
@@ -27,6 +28,18 @@ for quote in quotes:
 authors = soup.find_all("small", class_="author")
 for author in authors:
     print(author.text)
+
+quote_texts = [quote.text for quote in quotes]
+author_names = [author.text for author in authors]
+
+data = {
+    "Quote": quote_texts,
+    "Author": author_names
+}
+df = pd.DataFrame(data)
+
+# Save the DataFrame to a CSV file
+df.to_csv("quotes.csv", index=False, encoding='utf-8')
 
 # Sleep for a random interval between 1 and 3 seconds
 s = random.uniform(1, 3)
